@@ -10,6 +10,6 @@
 # # GET '/bookings/new'
 
 
-# CREATE POST method, redirect, request.form['data'], memebr and class repo's.select new booking, bookingrepo.save 
+# CREATE POST method, redirect, request.form['data'], memebr and workout repo's.select new booking, bookingrepo.save 
 
 # DELETE bookings/delete POST method, redirect, booking.repo.delete(id)
