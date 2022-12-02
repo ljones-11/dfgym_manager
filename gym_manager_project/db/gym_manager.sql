@@ -1,6 +1,6 @@
 DROP TABLE bookings;
 DROP TABLE members;
-DROP TABLE classes;
+DROP TABLE workouts;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
@@ -10,7 +10,7 @@ CREATE TABLE members (
     member_type VARCHAR(255)
 );
 
-CREATE TABLE classes (
+CREATE TABLE workouts (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
@@ -24,5 +24,5 @@ CREATE TABLE classes (
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
-    class_id INT REFERENCES classes(id) ON DELETE CASCADE
+    workout_id INT REFERENCES workouts(id) ON DELETE CASCADE
 );
