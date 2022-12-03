@@ -16,7 +16,7 @@ def save(member):
     return member
 
 def delete_all():
-    sql = """ DELETE from members """
+    sql = " DELETE from members "
     run_sql(sql)
 
 def delete(id):
