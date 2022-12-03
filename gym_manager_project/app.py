@@ -12,7 +12,7 @@ app.register_blueprint(bookings_blueprint)
 app.register_blueprint(workouts_blueprint)
 app.register_blueprint(members_blueprint)
 
-#@app.route homepage '/' . "index.html", render homepage
+#@app.route homepage '/' . "index.html", render homeepage
 
 if __name__ == '__main__':
     app.run(debug=True)
