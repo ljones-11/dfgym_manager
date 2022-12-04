@@ -23,7 +23,7 @@ def member(id):
 
 @members_blueprint.route("/members/<int:id>/delete", methods=['POST'])
 def delete_member(id):
-    member = member_repository.delete(id)
+    member_repository.delete(id)
     return redirect("/members")
 
 #NEW
