@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.member import Member
+from models.workout import Workout
 
 
 
@@ -52,4 +53,19 @@ def update(member):
     values = [member.name, member.email, member.status, member.type, member.id]
     run_sql(sql, values)
 
+#get workouts for member
+def workouts(member):
+    workouts = []
+
+    sql = """SELECT workouts.* FROM workouts 
+    INNER JOIN bookings on bookings.workout_id=bookings.id 
+    WHERE member_id =%s"""
+
+    values = [member.id]
+    results = run_sql(sql,values)
+
+    for row in results:
+        workout = Workout(row['name'], row['description'], row['duration'], row['date'], row['time'], row['capacity'], row['status'], row['id'])
+        workouts.append(workout)
+    return workouts
 
