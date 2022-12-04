@@ -17,7 +17,7 @@ member1 = Member('Jack Bauer', 'jackbauer@24.com', '1', 'standard')
 member_repository.save(member1)
 member2 = Member('Tony Almeda', 'tonymole@24.com', '1', 'standard')
 member_repository.save(member2)
-member2 = Member('Nina Myers', 'ninamyers@24.com', '1', 'standard')
+member2 = Member('Nina Myers', 'ninamyers@24.com', '0', 'standard')
 member_repository.save(member2)
 
 workout1 = Workout('Yoga', 'Vinyasa style flow', 45, '22/12/22', '1930', 20, '1')
@@ -45,7 +45,7 @@ member1.email = "jb@24.com"
 member_repository.update(member1)
 
 for member in member_repository.select_all():
-    print (member.name, member.email, member.id)
+    print (member.name, member.email, member.status, member.id)
 
 # for workout in workout_repository.select_all():
 #     print(workout.name, workout.capacity, workout.time)

@@ -43,7 +43,26 @@ def add_member():
 
     new_member = Member(name, email, status, type)
     member_repository.save(new_member) 
-    return redirect("/members")     
+    return redirect("/members")  
+
+#EDIT
+
+@members_blueprint.route("/members/<int:id>/edit")  
+def edit_member(id):
+    member_to_edit = member_repository.select(id)
+    return render_template("members/edit.html", member=member_to_edit)
 
 #UPDATE POSTmethod, /members/<id>, request.form[''] data repo.update(member)
+
+@members_blueprint.route("/members/<int:id>", methods = ['POST'])
+def update_member(id):
+    name = request.form['name']
+    email = request.form['email']
+    status = request.form['status']
+    type = request.form['type']
+
+    edited_member = Member(name, email, status, type, id)
+    member_repository.update(edited_member)
+    return redirect("/members")
+
 

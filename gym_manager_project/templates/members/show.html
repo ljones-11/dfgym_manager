@@ -12,14 +12,17 @@
             </li>
             <li>
                 <p>Status:
-                {% if member.status %}
-                    Active
+                {% if member.status == 0 %}
+                    <p>Active</p>
                 {% else %}
-                    Not Active
+                    <p>Inactive</p>
                 {% endif %} </p>
             </li>
             <li>
                 <p>Membership Type: {{ member.type }}</p>
+            </li>
+            <li>
+            <a href="/members/{{ member.id }}/edit"><button>Edit</button></a>
             </li>
         </ul>
     </section>
