@@ -51,3 +51,5 @@ def update(member):
 
     values = [member.name, member.email, member.status, member.type, member.id]
     run_sql(sql, values)
+
+

@@ -3,3 +3,5 @@ class Booking:
         self.member = member
         self.workout = workout
         self.id = id
+
+    

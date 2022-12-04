@@ -6,6 +6,7 @@ from models.workout import Workout
 
 import repositories.member_repository as member_repository
 import repositories.workout_repository as workout_repository
+import repositories.booking_repository as booking_repository
 
 
 member_repository.delete_all()
@@ -24,6 +25,9 @@ workout2 = Workout('Strength', 'Barbell based movements', 50, '23/12/22', '0700'
 workout_repository.save(workout2)
 workout3 = Workout('Cardio', 'Rowing based intervals', 40, '23/12/22', '0800', 12, '1')
 workout_repository.save(workout3)
+
+booking1 = Booking(member1, workout1)
+booking_repository.save(booking1)
 
 workout_repository.delete(2)
 
