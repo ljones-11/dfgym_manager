@@ -1,4 +1,8 @@
-#imports
+from flask import Flask, Blueprint
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
+
+bookings_blueprint = Blueprint("bookings", __name__)
 
 #blueprint
 

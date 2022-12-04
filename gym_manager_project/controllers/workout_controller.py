@@ -1,4 +1,8 @@
-#imports
+from flask import Flask, Blueprint
+from models.workout import Workout
+import repositories.workout_repository as workout_repository
+
+workouts_blueprint = Blueprint("workouts", __name__)
 
 #blueprint
 
