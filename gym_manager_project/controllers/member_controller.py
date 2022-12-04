@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, redirect
 from models.member import Member
 import repositories.member_repository as member_repository
 
@@ -20,6 +20,12 @@ def member(id):
     return render_template("members/show.html", member=member)
 
 #DELETE POSTmethod, /members/<id>/delete, repo.delete redirect
+
+@members_blueprint.route("/members/<int:id>/delete", methods=['POST'])
+def delete_member(id):
+    member = member_repository.delete(id)
+    return redirect("/members")
+
 
 #CREATE POSTmethod, /members, request.form[''] data, member=Member, repo.save(member)
 
