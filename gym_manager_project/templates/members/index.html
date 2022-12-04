@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Members</h2>
+
+{% for member in members %}
+    <section>
+        <ul>
+            <li>
+                <a href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a>
+            </li>
+            <li>
+                <p>{{ member.email }}</p>
+            </li>
+            <li>
+                <p>Status:
+                 {% if member.status %}
+                    Active
+                {% else %}
+                    Not Active
+                 {% endif %} </p>
+            </li>
+            <li>
+                <p>Membership Type: {{ member.type }}</p>
+            </li>
+        </ul>
+    </section>
+    
+{% endfor %}
+    
+{% endblock %}

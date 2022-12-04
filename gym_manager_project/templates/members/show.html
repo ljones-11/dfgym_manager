@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section>
+        <ul>
+            <li>
+                <p>{{ member.name }}</p>
+            </li>
+            <li>
+                <p>{{ member.email }}</p>
+            </li>
+            <li>
+                <p>Status:
+                {% if member.status %}
+                    Active
+                {% else %}
+                    Not Active
+                {% endif %} </p>
+            </li>
+            <li>
+                <p>Membership Type: {{ member.type }}</p>
+            </li>
+        </ul>
+    </section>
+    
+{% endblock %}
