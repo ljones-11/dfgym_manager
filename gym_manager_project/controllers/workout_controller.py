@@ -28,8 +28,45 @@ def delete_workout(id):
 
 #NEW render form page
 
+@workouts_blueprint.route("/workouts/new")
+def new_workout():
+    return render_template("workouts/new.html")
+
 #CREATE POSTmethod, /workouts, request.form[''] data, workout=workout, repo.save(workout)
+
+@workouts_blueprint.route("/workouts", methods=['POST'])
+def add_workout():
+    name = request.form['name']
+    description = request.form['description']
+    duration = request.form['duration']
+    date = request.form['date']
+    time = request.form['time']
+    capacity = request.form['capacity']
+    status = request.form['status']
+
+    new_workout = Workout(name, description, duration, date, time, capacity, status)
+    workout_repository.save(new_workout) 
+    return redirect("/workouts")  
 
 #EDIT render edit form
 
+@workouts_blueprint.route("/workouts/<int:id>/edit")  
+def edit_workout(id):
+    workout_to_edit = workout_repository.select(id)
+    return render_template("workouts/edit.html", workout=workout_to_edit)
+
 #UPDATE POSTmethod, /workouts/<id>, request.form[''] data repo.update(workout)
+
+@workouts_blueprint.route("/workouts/<int:id>", methods = ['POST'])
+def update_workout(id):
+    name = request.form['name']
+    description = request.form['description']
+    duration = request.form['duration']
+    date = request.form['date']
+    time = request.form['time']
+    capacity = request.form['capacity']
+    status = request.form['status']
+
+    edited_workout = Workout(name, description, duration, date, time, capacity, status, id)
+    workout_repository.update(edited_workout)
+    return redirect("/workouts")
