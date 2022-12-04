@@ -13,9 +13,9 @@
             <li>
                 <p>Status:
                 {% if member.status == '1' %}
-                    <p>Active</p>
-                {% else %}
-                    <p>Inactive</p>
+                    Active
+                {% elif member.status == '0'%}
+                    Inactive
                 {% endif %} </p>
             </li>
             <li>

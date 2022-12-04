@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section>
+        <ul>
+            <li>
+                <p>{{ workout.name }}</p>
+            </li>
+            <li>
+                <blockquote>{{ workout.description }}</blockquote>
+            </li>
+            <li>
+                <p>Duration: {{ workout.duration }} mins</p>
+            </li>
+            <li>
+                <p>Date and time: {{ workout.date }}, {{ workout.time }}</p>
+            </li>
+            <li>
+                <p>Max Capacity: {{ workout.capacity }} </p>
+            </li>
+            <li>
+                <p>Status: 
+                    {% if workout.status == '1'%}
+                    ON
+                    {% elif workout.status == '0'%}
+                    OFF
+                    {% endif %}</p>
+            </li>
+            <li>
+            <a href="/workout/{{ workout.id }}/edit"><button>Edit</button></a>
+            </li>
+        </ul>
+    </section>
+    
+{% endblock %}

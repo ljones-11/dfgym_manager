@@ -24,7 +24,7 @@ workout1 = Workout('Yoga', 'Vinyasa style flow', 45, '22/12/22', '1930', 20, '1'
 workout_repository.save(workout1)
 workout2 = Workout('Strength', 'Barbell based movements', 50, '23/12/22', '0700', 12, '1')
 workout_repository.save(workout2)
-workout3 = Workout('Cardio', 'Rowing based intervals', 40, '23/12/22', '0800', 12, '1')
+workout3 = Workout('Cardio', 'Rowing based intervals', 40, '23/12/22', '0800', 12, '0')
 workout_repository.save(workout3)
 
 booking1 = Booking(member1, workout1)

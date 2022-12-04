@@ -14,18 +14,12 @@
                 <a href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a>
             </li>
             <li>
-                <p>{{ member.email }}</p>
-            </li>
-            <li>
                 <p>Status:
-                 {% if member.status %}
-                    Active
-                {% else %}
-                    Not Active
-                 {% endif %} </p>
-            </li>
-            <li>
-                <p>Membership Type: {{ member.type }}</p>
+                    {% if member.status == '1' %}
+                        Active
+                    {% elif member.status == '0'%}
+                        Inactive
+                    {% endif %} </p>
             </li>
             <a href="/members/{{ member.id }}/edit"><button>Edit</button></a>
             <form action="members/{{ member.id }}/delete" method="POST">
