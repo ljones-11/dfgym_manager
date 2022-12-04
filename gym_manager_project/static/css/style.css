@@ -1,0 +1,35 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+#header-logo {
+    height:100px;
+    width:100px
+}
+
+#header {
+    display: flex;
+    gap: 1rem
+}
+
+#header-div {
+    display: flex;
+    flex-direction: row;
+}
+
+#header-nav {
+    display:flex;
+}
+
+
+#header-ul {
+    display:flex;
+    gap:1rem;
+    list-style: none;
+    
+}
+
+#footer {
+    display:flex;
+    justify-content: center;
+}
+

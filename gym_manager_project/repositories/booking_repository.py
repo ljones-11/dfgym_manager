@@ -53,11 +53,10 @@ def workout(booking):
     workout = Workout(result['name'], result['description'], result['duration'], result['date'], result['time'], result['capacity'], result['status'], result['id'])
     return workout
 
-#no reason to update booking id's
-# def update(booking):
-#     sql = """UPDATE bookings 
-#     SET (member_id, workout_id) = (%s, %s) 
-#     WHERE id = %s"""
-#     values = [booking.member.id, booking.workout.id, booking.id]
-#     run_sql(sql,values)
+def update(booking):
+    sql = """UPDATE bookings 
+    SET (member_id, workout_id) = (%s, %s) 
+    WHERE id = %s"""
+    values = [booking.member.id, booking.workout.id, booking.id]
+    run_sql(sql,values)
 
