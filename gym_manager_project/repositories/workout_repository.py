@@ -24,7 +24,7 @@ def delete(id):
 
 def select_all():
     workouts = []
-    sql = " SELECT * from workouts ORDER BY DATE "
+    sql = " SELECT * from workouts ORDER BY DATE, TIME "
     results = run_sql(sql)
 
     for row in results:

@@ -58,7 +58,7 @@ def workouts(member):
     workouts = []
 
     sql = """SELECT workouts.* FROM workouts 
-    INNER JOIN bookings on bookings.workout_id=workouts.id 
+    INNER JOIN bookings ON bookings.workout_id=workouts.id 
     WHERE member_id =%s"""
 
     values = [member.id]

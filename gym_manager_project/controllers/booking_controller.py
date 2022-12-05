@@ -37,8 +37,16 @@ def add_booking():
     member = member_repository.select(member_id)
     workout = workout_repository.select(workout_id)
     new_booking = Booking(member, workout)
+    exisiting_bookings = booking_repository.select_all()
+
+    for booking in exisiting_bookings:
+        if booking.workout.id == workout.id and member.id == booking.member.id:
+            return render_template("/booked-in-error.html")
     booking_repository.save(new_booking)
     return redirect("/bookings")
+
+
+    
 
 # DELETE bookings/delete POST method, redirect, booking.repo.delete(id)
 
