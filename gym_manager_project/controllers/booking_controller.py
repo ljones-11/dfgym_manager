@@ -41,3 +41,14 @@ def add_booking():
 def delete_booking(id):
     booking_repository.delete(id)
     return redirect("/bookings")
+
+
+#EDIT
+@bookings_blueprint.route("/bookings/<int:id>/edit")
+def edit_booking(id):
+    booking_to_edit = booking_repository.select(id)
+    return render_template("bookings/edit.html", )
+
+
+#UPDATE POSTmethod, /bookings/<id>, request.form[''] data repo.update(booking)
+

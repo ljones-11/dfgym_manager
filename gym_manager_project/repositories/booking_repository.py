@@ -26,7 +26,19 @@ def select_all():
         workout = workout_repository.select(row['workout_id'])
         booking = Booking(member, workout, row['id'])
         bookings.append(booking)
-    return bookings    
+    return bookings   
+
+def select(id):
+    sql = "SELECT * from bookings WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        member = member_repository.select(result["member_id"])
+        workout = workout_repository.select(result["workout_id"])
+        booking = Booking(member, workout, result['id'])
+    return booking
 
 def delete_all():
     sql = "DELETE from bookings"
