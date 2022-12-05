@@ -15,7 +15,7 @@ CREATE TABLE workouts (
     name VARCHAR(255),
     description VARCHAR(255),
     duration INT,
-    date VARCHAR(255),
+    date DATE,
     time VARCHAR(255),
     capacity INT,
     status BIT
