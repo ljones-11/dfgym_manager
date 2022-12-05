@@ -9,8 +9,8 @@ workouts_blueprint = Blueprint("workouts", __name__)
 #GET list workouts '/workouts' repo.select_all, render list
 
 @workouts_blueprint.route("/workouts")
-def members():
-    workouts = workout_repository.select_all()
+def workouts():
+    workouts = workout_repository.select_all() 
     return render_template("workouts/index.html", workouts = workouts)
 
 #GET show workout '/workouts/<id>' repo.select(id), render 

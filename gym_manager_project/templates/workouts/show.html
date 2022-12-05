@@ -3,7 +3,12 @@
 {% block content %}
 
     <section>
-        <h2>{{ workout.name }}</h2>
+        {% if remaining_spaces %}
+            <h2>{{ workout.name }} ({{ remaining_spaces }} spaces available)</h2>
+        {% else %}
+            <h2>{{ workout.name }} (FULL) </h2>
+        {% endif %}
+
         <ul>
             <li>
                 <blockquote>{{ workout.description }}</blockquote>
@@ -32,10 +37,6 @@
                             {{members.name}}
                     </li>
                 {% endfor %}
-            </li>
-            <li>
-                    <p>{{ remaining_spaces }} spaces remaining</p>
-                
             </li>
 
 
