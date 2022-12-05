@@ -1,4 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, request
+from datetime import date, time
 from models.workout import Workout
 import repositories.workout_repository as workout_repository
 import repositories.booking_repository as booking_repository
@@ -18,15 +19,21 @@ def workouts():
 @workouts_blueprint.route("/workouts/<int:id>")
 def workout(id):
     workout = workout_repository.select(id)
-    member_list = workout_repository.members(workout)
-    members_in_workout = workout_repository.members(workout)
-    remaining_spaces = (workout.capacity - len(members_in_workout)) 
-    return render_template("workouts/show.html", workout=workout, member_list = member_list, remaining_spaces = remaining_spaces)
+    todays_date = date.today()
+
+    if workout.date < todays_date:
+        return render_template("old-workout-error.html")
+    else:
+        member_list = workout_repository.members(workout)
+        members_in_workout = workout_repository.members(workout)
+        remaining_spaces = (workout.capacity - len(members_in_workout)) 
+        return render_template("workouts/show.html", workout=workout, member_list = member_list, remaining_spaces = remaining_spaces)
 
 #DELETE POSTmethod, /workouts/<id>/delete, repo.delete redirect
 
 @workouts_blueprint.route("/workouts/<int:id>/delete", methods=['POST'])
 def delete_workout(id):
+
     workout_repository.delete(id)
     return redirect("/workouts")
 
