@@ -22,7 +22,7 @@ def workout(id):
     todays_date = date.today()
 
     if workout.date < todays_date:
-        return render_template("old-workout-error.html")
+        return render_template("errors/old-workout-error.html")
     else:
         member_list = workout_repository.members(workout)
         members_in_workout = workout_repository.members(workout)

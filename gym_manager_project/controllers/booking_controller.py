@@ -53,18 +53,19 @@ def add_booking():
     members_in_workout = workout_repository.members(workout)
     todays_date = date.today()
 
+
     for booking in exisiting_bookings:
         if booking.workout.id == workout.id and member.id == booking.member.id:
-            return render_template("/booked-in-error.html")
+            return render_template("errors/booked-in-error.html")
             
         elif workout.date < todays_date:
-            return render_template("old-workout-error.html")
+            return render_template("errors/old-workout-error.html")
 
     if len(members_in_workout) < workout.capacity:
         booking_repository.save(new_booking)
         return redirect("/bookings")
     else:
-        return render_template("/workout-full.html")
+        return render_template("errors/workout-full.html")
 
 
     
