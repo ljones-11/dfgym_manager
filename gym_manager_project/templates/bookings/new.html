@@ -13,7 +13,7 @@
 
         <label for="workout">Workout:</label>
         <select name="workout_id" id="workout">
-            {% for workout in workouts %}
+            {% for workout in active_workouts %}
                 <option value="{{ workout.id }}">{{ workout.name }}</option>
             {% endfor %}
         </select>
