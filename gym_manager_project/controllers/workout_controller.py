@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, redirect, request
 from models.workout import Workout
 import repositories.workout_repository as workout_repository
+import repositories.booking_repository as booking_repository
 
 workouts_blueprint = Blueprint("workouts", __name__)
 
@@ -17,7 +18,8 @@ def members():
 @workouts_blueprint.route("/workouts/<int:id>")
 def workout(id):
     workout = workout_repository.select(id)
-    return render_template("workouts/show.html", workout=workout)
+    member_list = workout_repository.members(workout)
+    return render_template("workouts/show.html", workout=workout, member_list = member_list)
 
 #DELETE POSTmethod, /workouts/<id>/delete, repo.delete redirect
 

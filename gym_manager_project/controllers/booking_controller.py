@@ -14,6 +14,11 @@ def bookings():
     bookings = booking_repository.select_all()
     return render_template("bookings/index.html", bookings = bookings)
 
+@bookings_blueprint.route("/bookings/<int:id>")
+def booking(id):
+    booking = booking_repository.select(id)
+    return render_template("bookings/show.html", booking=booking)
+
 # # GET '/bookings/new'
 
 @bookings_blueprint.route("/bookings/new")
@@ -43,12 +48,4 @@ def delete_booking(id):
     return redirect("/bookings")
 
 
-#EDIT
-@bookings_blueprint.route("/bookings/<int:id>/edit")
-def edit_booking(id):
-    booking_to_edit = booking_repository.select(id)
-    return render_template("bookings/edit.html", )
-
-
-#UPDATE POSTmethod, /bookings/<id>, request.form[''] data repo.update(booking)
 

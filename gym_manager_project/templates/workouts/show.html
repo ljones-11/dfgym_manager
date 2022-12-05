@@ -26,6 +26,16 @@
                     {% endif %}</p>
             </li>
             <li>
+                <p>Members booked in:</p>
+                    {% for members in member_list %}
+                    <li>
+                            {{members.name}}
+                    </li>
+                {% endfor %}
+            </li>
+
+
+            <li>
             <a href="/workout/{{ workout.id }}/edit"><button>Edit</button></a>
             </li>
         </ul>
