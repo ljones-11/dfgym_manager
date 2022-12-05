@@ -57,6 +57,7 @@ def member(booking):
     member = Member(result['name'], result['email'], result['status'], result['type'], result['id'])
     return member
 
+
 def workout(booking):
     sql = "SELECT * from workouts where id = %s"
     values = [booking.workout.id]
