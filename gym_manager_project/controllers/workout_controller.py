@@ -19,7 +19,9 @@ def members():
 def workout(id):
     workout = workout_repository.select(id)
     member_list = workout_repository.members(workout)
-    return render_template("workouts/show.html", workout=workout, member_list = member_list)
+    members_in_workout = workout_repository.members(workout)
+    remaining_spaces = (workout.capacity - len(members_in_workout)) 
+    return render_template("workouts/show.html", workout=workout, member_list = member_list, remaining_spaces = remaining_spaces)
 
 #DELETE POSTmethod, /workouts/<id>/delete, repo.delete redirect
 
