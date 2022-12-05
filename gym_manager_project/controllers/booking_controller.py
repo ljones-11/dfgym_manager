@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.booking import Booking
+from datetime import date, time
 import repositories.booking_repository as booking_repository
 import repositories.member_repository as member_repository
 import repositories.workout_repository as workout_repository
@@ -35,7 +36,7 @@ def new_booking():
     for workout in workouts:
         if workout.status == '1':
             active_workouts.append(workout)
-            
+
     return render_template("bookings/new.html", members=members, workouts=workouts, active_members = active_members, active_workouts = active_workouts)
 
 # CREATE POST method, redirect, request.form['data'], memebr and workout repo's.select new booking, bookingrepo.save 
@@ -50,11 +51,14 @@ def add_booking():
     new_booking = Booking(member, workout)
     exisiting_bookings = booking_repository.select_all()
     members_in_workout = workout_repository.members(workout)
-
+    todays_date = date.today()
 
     for booking in exisiting_bookings:
         if booking.workout.id == workout.id and member.id == booking.member.id:
             return render_template("/booked-in-error.html")
+            
+        elif workout.date < todays_date:
+            return render_template("old-workout-error.html")
 
     if len(members_in_workout) < workout.capacity:
         booking_repository.save(new_booking)
