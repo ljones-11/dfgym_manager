@@ -17,7 +17,8 @@ def members():
 @members_blueprint.route("/members/<int:id>")
 def member(id):
     member = member_repository.select(id)
-    return render_template("members/show.html", member=member)
+    workouts_list = member_repository.workouts(member)
+    return render_template("members/show.html", member=member, workouts_list = workouts_list)
 
 #DELETE POSTmethod, /members/<id>/delete, repo.delete redirect
 

@@ -22,6 +22,14 @@
                 <p>Membership Type: {{ member.type }}</p>
             </li>
             <li>
+                <p>Workouts booked in for:</p>
+                    {% for workouts in workouts_list %}
+                    <li>
+                            {{workouts.name}}
+                    </li>
+                {% endfor %}
+            </li>
+            <li>
             <a href="/members/{{ member.id }}/edit"><button>Edit</button></a>
             </li>
         </ul>
