@@ -23,9 +23,14 @@ def booking(id):
 
 @bookings_blueprint.route("/bookings/new")
 def new_booking():
+    active_members = []
     members = member_repository.select_all()
     workouts = workout_repository.select_all()
-    return render_template("bookings/new.html", members=members, workouts=workouts)
+    for member in members:
+        if member.status == '1':
+            active_members.append(member)
+
+    return render_template("bookings/new.html", members=members, workouts=workouts, active_members = active_members)
 
 # CREATE POST method, redirect, request.form['data'], memebr and workout repo's.select new booking, bookingrepo.save 
 
