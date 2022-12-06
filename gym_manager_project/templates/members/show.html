@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <section>
-        <ul>
-            <li>
-                <p>{{ member.name }}</p>
+<main>
+    <div class = "container">
+    <div class = "show-member-list-container">
+        <ul class = "members-list">
+            <li class="members-list-item">
+                <h2 class="black-text">{{ member.name }}</h2>
             </li>
-            <li>
-                <p>{{ member.email }}</p>
+            <li class="members-list-item">
+                <p><a class="email-link" href="mailto:{{ member.email }}">{{ member.email }}</a></p>
             </li>
-            <li>
-                <p>Status:
-                {% if member.status == '1' %}
-                    Active
+            <li class="members-list-item">
+                <p>{% if member.status == '1' %}
+                <span>&#128994;</span>
                 {% elif member.status == '0'%}
-                    Inactive
-                {% endif %} </p>
+                <span>&#128308;</span>
+                {% endif %}</p>
                 <!-- <button class="completed-button">
                     <a href="/member/{{member.id}}/changestatus">
                         {% if member.status %}
@@ -27,23 +27,23 @@
 
 
                     </a>
-                </button>
             </li>
-            <li>
-                <p>Membership Type: {{ member.type }}</p>
+            <li class = "members-list-item-solid">
+                <p>Membership | {{ member.type }}</p>
             </li>
-            <li>
-                <p>Workouts booked in for:</p>
+            <li class = "classes-booked-list-item">
+                <h4>Classes booked</h4>
                     {% for workouts in workouts_list %}
-                    <li>
+                    <li class="members-list-item-box">
                             {{workouts.name}}
                     </li>
                 {% endfor %}
             </li>
-            <li>
-            <a href="/members/{{ member.id }}/edit"><button>Edit</button></a>
+            <li class = "members-list-item">
+            <a href="/members/{{ member.id }}/edit"><button class="edit-delete-button">Edit</button></a>
             </li>
         </ul>
-    </section>
-    
+    </div>
+</div>
+</main>
 {% endblock %}

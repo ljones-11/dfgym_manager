@@ -32,9 +32,8 @@ def workout(id):
 
 #DELETE POSTmethod, /workouts/<id>/delete, repo.delete redirect
 
-@workouts_blueprint.route("/workouts/<int:id>/delete", methods=['POST'])
+@workouts_blueprint.route("/workout/<int:id>/delete", methods=['POST'])
 def delete_workout(id):
-
     workout_repository.delete(id)
     return redirect("/workouts")
 

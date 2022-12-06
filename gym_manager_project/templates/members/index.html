@@ -1,34 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
+<main>
+<div class="header-div">
+<h1>Members</h1>
+</div>
 
-<h2>Members</h2>
-
-<section>
-    <a href="/members/new"><button>Add Member</button></a>
+<section class="container">
+    <a href="/members/new"><button class="add-button">Add New Member</button></a>
 </section>
 
+<div class = "whole-list">
 {% for member in members %}
-    <section>
-        <ul>
-            <li>
-                <a href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a>
-            </li>
-            <li>
-                <p>
-                    {% if member.status == '1' %}
-                        Active
-                    {% elif member.status == '0'%}
-                        Inactive
-                    {% endif %} membership </p>
-            </li>
-            <a href="/members/{{ member.id }}/edit"><button>Edit</button></a>
-            <form action="members/{{ member.id }}/delete" method="POST">
-                <input type="submit" value="Delete">
-            </form>
+
+    <div class="list-container">
+        <ul class="members-list">
             
+                <li class="members-list-item">
+                    <a class="a-name" href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a>
+                </li>
+                <li class="members-list-item">
+                    <p>
+                        {% if member.status == '1' %}
+                            <span>&#128994;</span>
+                        {% elif member.status == '0'%}
+                            <span>&#128308;</span>
+                        {% endif %}</p>
+                </li>
+         <div class="button-div">
+            <a href="/members/{{ member.id }}/edit"><button class="edit-delete-button">Edit</button></a>
+        </div>
+        <div class="button-div">
+            <form action="members/{{ member.id }}/delete" method="POST">
+                <input class="edit-delete-button" type="submit" value="Delete">
+            </form>
+        </div>   
         </ul>
-    </section>
-    
+    </div>
+
 {% endfor %}
-    
+</div>  
 {% endblock %}
+</main>

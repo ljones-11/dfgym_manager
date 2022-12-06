@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
-    <div>
-        <button></button>
-        <button></button>
-        <button></button>
-
+<main class="index-main">
+<section class="home-section">
+    <div class="home-button-div">
+        <a href="/members"><button class="home-button">members</button></a>
     </div>
+    <div class="home-button-div">
+        <a href="/workouts"><button class="home-button">classes</button></a>
+    </div>
+    <div class="home-button-div">
+        <a href="/bookings"><button class="home-button">bookings</button></a>
+    </div>   
 </section>
+</main>
 {% endblock %}
