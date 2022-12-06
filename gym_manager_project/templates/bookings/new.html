@@ -3,24 +3,27 @@
 {% block content %}
 <h2>Add a Booking</h2>
 
-    <form action="/bookings" method = "POST">
-        <label for="member">User:</label>
-        <select name="member_id" id="member">
-            {% for member in active_members %}
-                <option value="{{ member.id }}">{{ member.name }}</option>
-            {% endfor %}
-        </select>
+        <form action="/bookings" method = "POST">
+            <label for="member">User:</label>
+            <select name="member_id" id="member">
+                {% for member in active_members %}
+                    <option value="{{ member.id }}">{{ member.name }}</option>
+ 
+                {% endfor %}
+            </select>
+        
+            <label for="workout">Workout:</label>
+            <select name="workout_id" id="workout">
+                {% for workout in active_workouts %}
+                    <option value="{{ workout.id }}">{{ workout.name }}</option>
+                {% endfor %}
+                </select>
+                
+            <input type="submit" value="Create Booking">
+        </form>
 
-        <label for="workout">Workout:</label>
-        <select name="workout_id" id="workout">
-            {% for workout in active_workouts %}
-                <option value="{{ workout.id }}">{{ workout.name }}</option>
-            {% endfor %}
-        </select>
-
-
-        <input type="submit" value="Create Booking">
-
-    </form>
     
+
+    
+
 {% endblock %}

@@ -30,6 +30,9 @@ def new_booking():
     workouts = workout_repository.select_all()
     todays_date = date.today()
 
+    # start_of_peak_time = 1800
+    # end_of_peak_time = 2000
+
     for member in members:
         if member.status == '1':
             active_members.append(member)
@@ -37,6 +40,16 @@ def new_booking():
     for workout in workouts:
         if workout.status == '1' and workout.date > todays_date:
             active_workouts.append(workout)
+
+    premium_members = []
+    for member in active_members:
+        if member.type =='premium':
+            premium_members.append(member)
+        
+    standard_members = []
+    for member in active_members:
+        if member.type =='standard':
+            standard_members.append(member)
 
     return render_template("bookings/new.html", members=members, workouts=workouts, active_members = active_members, active_workouts = active_workouts)
 

@@ -1,36 +1,63 @@
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #434343;
+}
+.logo-image {
+    height: 100px;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+}
+
+nav {
     
 }
-#header-logo {
-    height:100px;
-    width:100px
-}
 
-#header {
-    display: flex;
-    gap: 1rem
-}
-
-#header-div {
-    display: flex;
-    flex-direction: row;
-}
-
-#header-nav {
+.header-div {
     display:flex;
+    
 }
 
-
-#header-ul {
+.header-ul {
+    font-family:'Baron Neue', sans-serif;
     display:flex;
+    padding: 1rem;
+    padding-top: 1.6rem;
     gap:1rem;
     list-style: none;
     
+    
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Baron Neue', sans-serif;
+    font-family: 'Baron Neue Italic', sans-serif;
+    font-family: 'Baron Neue Bold Italic', sans-serif;
+    font-family: 'Baron Neue Bold', sans-serif;
+    font-family: 'Baron Neue Black Italic', sans-serif;
+    font-family: 'Baron Neue Black', sans-serif;
+}
+.h1 {
+    color: #f3f3f3bc;
+    padding-top: 1.3rem;
+}
+
+
+
+a {
+    color: #f3f3f3bc;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#54b1e5;
 }
 
 #footer {
     display:flex;
     justify-content: center;
+    border-style: solid;
 }
 

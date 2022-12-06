@@ -66,4 +66,11 @@ def update_member(id):
     member_repository.update(edited_member)
     return redirect("/members")
 
+# @members_blueprint.route("/member/<member_id>/changestatus")
+# def status_change(member_id):
+#     member = member_repository.select(member_id)
+#     member.status = int(not bool(member.status))
+#     member_repository.update(member)
+#     return redirect(request.referrer)
+
 

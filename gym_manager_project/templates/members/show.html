@@ -17,6 +17,17 @@
                 {% elif member.status == '0'%}
                     Inactive
                 {% endif %} </p>
+                <!-- <button class="completed-button">
+                    <a href="/member/{{member.id}}/changestatus">
+                        {% if member.status %}
+                        De-activate
+                        {% else %}
+                        Activate
+                        {% endif %} -->
+
+
+                    </a>
+                </button>
             </li>
             <li>
                 <p>Membership Type: {{ member.type }}</p>
