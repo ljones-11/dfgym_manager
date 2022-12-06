@@ -1,49 +1,54 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main>
+    <div class="container">
+        <div class = "show-member-list-container-classes">
+            <ul class = "members-list">
+                <li class="members-list-item">
+                    <u><h2>{{ workout.name }}</h2></u>
+                </li>
+                
+                <li class="members-list-item">
+                    <blockquote class="description">{{ workout.description }}</blockquote>
+                </li>
+                <li class="members-list-item">
+                    <b><p>{{ workout.date }} at {{ workout.time }}</p></b>
+                </li>
+                <li class="members-list-item">
+                    <p>Duration: {{ workout.duration }} mins</p>
+                </li>
+                <li class="members-list-item">
+                    <p>
+                        {% if workout.status == '1'%}
+                        <span>&#128994;</span>
+                        {% elif workout.status == '0'%}
+                        <span>&#128308;</span>
+                        {% endif %}</p>
+                </li>
+                <li class="members-list-item">
+                    {% if remaining_spaces %}
+                        <p>{{ remaining_spaces }} spaces available ({{workout.capacity}})</p>
+                    {% else %}
+                        <h2>{{ workout.name }} (FULL) </h2>
+                    {% endif %}
+                </li>
+                </li>
+                <li class="members-list-item">
+                    <p>Members booked in:</p>
+                        {% for members in member_list %}
+                        <li class="members-list-item-box">
+                                {{members.name}}
+                        </li>
+                    {% endfor %}
+                </li>
 
-    <section>
-        {% if remaining_spaces %}
-            <h2>{{ workout.name }} ({{ remaining_spaces }} spaces available)</h2>
-        {% else %}
-            <h2>{{ workout.name }} (FULL) </h2>
-        {% endif %}
 
-        <ul>
-            <li>
-                <blockquote>{{ workout.description }}</blockquote>
-            </li>
-            <li>
-                <p>Duration: {{ workout.duration }} mins</p>
-            </li>
-            <li>
-                <p>Date and time: {{ workout.date }}, {{ workout.time }}</p>
-            </li>
-            <li>
-                <p>Max Capacity: {{ workout.capacity }} </p>
-            </li>
-            <li>
-                <p>Status: 
-                    {% if workout.status == '1'%}
-                    ON
-                    {% elif workout.status == '0'%}
-                    OFF
-                    {% endif %}</p>
-            </li>
-            <li>
-                <p>Members booked in:</p>
-                    {% for members in member_list %}
-                    <li>
-                            {{members.name}}
-                    </li>
-                {% endfor %}
-            </li>
-
-
-            <li>
-            <a href="/workout/{{ workout.id }}/edit"><button>Edit</button></a>
+            <li class = "members-list-item">
+            <a href="/workout/{{ workout.id }}/edit"><button class="edit-delete-button">Edit</button></a>
             </li>
         </ul>
-    </section>
-    
+        </div>
+    </div>
+</main>
 {% endblock %}
