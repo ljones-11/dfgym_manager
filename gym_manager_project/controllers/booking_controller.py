@@ -28,13 +28,14 @@ def new_booking():
     active_workouts = []
     members = member_repository.select_all()
     workouts = workout_repository.select_all()
+    todays_date = date.today()
 
     for member in members:
         if member.status == '1':
             active_members.append(member)
 
     for workout in workouts:
-        if workout.status == '1':
+        if workout.status == '1' and workout.date > todays_date:
             active_workouts.append(workout)
 
     return render_template("bookings/new.html", members=members, workouts=workouts, active_members = active_members, active_workouts = active_workouts)

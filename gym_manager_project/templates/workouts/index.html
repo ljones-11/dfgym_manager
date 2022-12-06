@@ -16,8 +16,8 @@
             <li>
                 <p> {{ workout.date }} @ {{ workout.time }}</p>
             </li>
-            <a href="/workouts/{{ workout.id }}/edit"><button>Edit</button></a>
-            <form action="workouts/{{ workout.id }}/delete" method="POST">
+            <a href="/workout/{{ workout.id }}/edit"><button>Edit</button></a>
+            <form action="workout/{{ workout.id }}/delete" method="POST">
                 <input type="submit" value="Delete">
             </form>
             

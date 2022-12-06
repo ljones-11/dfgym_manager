@@ -20,6 +20,7 @@ def workouts():
 def workout(id):
     workout = workout_repository.select(id)
     todays_date = date.today()
+    
 
     if workout.date < todays_date:
         return render_template("errors/old-workout-error.html")
@@ -61,7 +62,7 @@ def add_workout():
 
 #EDIT render edit form
 
-@workouts_blueprint.route("/workouts/<int:id>/edit")  
+@workouts_blueprint.route("/workout/<int:id>/edit")  
 def edit_workout(id):
     workout_to_edit = workout_repository.select(id)
     return render_template("workouts/edit.html", workout=workout_to_edit)
