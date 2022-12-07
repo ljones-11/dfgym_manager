@@ -73,7 +73,7 @@ main {
     border-radius: 10px;
     box-shadow: 0px 2px 2px;
     min-width: 175px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     background-color:#d7eefd;
 
 }
@@ -88,7 +88,7 @@ main {
     border-color:#434343;
     border-radius: 15px;
     box-shadow: 0px 2px 2px;
-    width: 200px;
+    width: 220px;
     margin-bottom:2rem;
 
 }
@@ -103,7 +103,7 @@ main {
     border-color:#434343;
     border-radius: 10px;
     box-shadow: 0px 2px 2px;
-    width: 250px;
+    width: 270px;
     padding: 30px;
     margin: 50px;
 }
@@ -244,7 +244,8 @@ main {
 h2, h4 {
     font-family: helvetica;
 }
-h1,h3, {
+
+h1,h3 {
     font-family: 'Baron Neue', sans-serif;
     font-family: 'Baron Neue Italic', sans-serif;
     font-family: 'Baron Neue Bold Italic', sans-serif;
