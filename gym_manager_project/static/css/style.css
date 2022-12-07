@@ -271,11 +271,33 @@ h1,h2,h3,h4 {
     background-color:#ebf7ff ;
 }
 
+.black-text-notrans {
+    color:#434343;
+    padding-top:20px;
+    font-family:Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    border-style:solid;
+    border-width:2px ;
+    border-color:#434343;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left:10px;
+    margin-right:10px;
+    background-color:#ebf7ff ;
+}
+
 .black-text:hover{
     color:#54b1e5;
     border-color:#54b1e5;
     transition-duration:0.75s;
 }
+
 
 
 
