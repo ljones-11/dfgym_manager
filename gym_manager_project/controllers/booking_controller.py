@@ -20,6 +20,7 @@ def booking(id):
     booking = booking_repository.select(id)
     return render_template("bookings/show.html", booking=booking)
 
+
 # # GET '/bookings/new'
 
 @bookings_blueprint.route("/bookings/new")

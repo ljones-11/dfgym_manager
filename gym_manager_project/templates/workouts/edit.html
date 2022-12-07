@@ -1,47 +1,57 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<section>
-    <h2>Edit {{ workout.name }}</h2>
-
-        <form action="/workouts/{{ workout.id }}" method="POST">
-            <div>
-                <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" value="{{ workout.name }}">
-
-                <label for="description">Description:</label>
-                    <textarea type="description" id="description" name="description" value="{{ workout.description }}"></textarea>
-
-                <label for="duration">Duration:</label>
-                    <input type="number" id="duration" name="duration" value="{{ workout.duration }}">
+<main class="main-forms">
+    <div class="container-form">
+        <div class="div-form-container">
+            <u><h2>Edit {{ workout.name }}</h2></u>
+        </div>
+        <div class="div-form-container">
+            <form action="/workouts/{{ workout.id }}" method="POST">
+                <div class="div-form">
+                    <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="{{ workout.name }}">
+                </div>
+                <div class="div-form">
+                    <label for="description">Description:</label>
+                        <textarea type="description" id="description" name="description" value="{{ workout.description }}"></textarea>
+                </div>
+                <div class="div-form">
+                    <label for="duration">Duration:</label>
+                        <input type="number" id="duration" name="duration" value="{{ workout.duration }}">
+                </div>
+                <div class="div-form">   
+                        <label for="date">Date:</label>
+                        <input type="text" id="date" name="date" value="{{ workout.date }}">
+                </div> 
+                <div class="div-form">  
+                        <label for="time">Time:</label>
+                        <input type="text" id="time" name="time" value="{{ workout.time }}">
+                </div>
+                <div class="div-form">      
+                        <label for="capacity">Capacity:</label>
+                        <input type="number" id="capacity" name="capacity" value="{{ workout.capacity }}">
+                </div>
                 
-                    <label for="date">Date:</label>
-                    <input type="text" id="date" name="date" value="{{ workout.date }}">
-
-                    <label for="time">Time:</label>
-                    <input type="text" id="time" name="time" value="{{ workout.time }}">
+                <div class="div-form">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        {% if workout.status =='1' %}
+                        <option value='1'>ON</option>
+                        <option value='0'>OFF</option> 
+                        {% elif workout.status =='0' %} 
+                        <option value='0'>OFF</option> 
+                        <option value='1'>ON</option>
+                        {% endif %}
+                        
+                    </select>
+                </div>
                 
-                    <label for="capacity">Capacity:</label>
-                    <input type="number" id="capacity" name="capacity" value="{{ workout.capacity }}">
-
-                <label for="status">Status</label>
-                <select id="status" name="status">
-                    {% if workout.status =='1' %}
-                    <option value='1'>ON</option>
-                    <option value='0'>OFF</option> 
-                    {% elif workout.status =='0' %} 
-                    <option value='0'>OFF</option> 
-                    <option value='1'>ON</option>
-                    {% endif %}
-                    
-                </select>
-
-                
-
-                    <input type="submit">
+                <div class="button-div">
+                    <input type="submit" class="submit-button">
+                </div>
             </div>
         </form>
-</section>
-    
+    </div>
+</main>    
 {% endblock %}

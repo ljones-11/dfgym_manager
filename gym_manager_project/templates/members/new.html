@@ -1,37 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<section>
-    <h2>Add Member</h2>
-
+<main class="main-forms">
+<div class="container-form">
+    <div class="div-form-container">
+    <u><h2>Add Member</h2></u>
+    </div>  
+        <div class="div-form-container">
         <form action="/members" method="POST">
-            <div>
+            <div class="div-form">
                 <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
-
+                </div>
+                <div class="div-form">
                 <label for="text">E-mail:</label>
                     <input type="email" id="email" name="email">
-                
+                </div>
+                <div class="div-form">
                 <label for="status">Status</label>
                 <select id="type" name="status">
                     <option value='1'>Active</option>
                     <option value='0'>Inactive</option>
                 </select>
+            </div>
 
                
-
+            <div class="div-form">
                 <label for="type">Membership Type</label>
                     <select id="type" name="type">
                         <option value="standard">Standard</option>
                         <option value="premium">Premium</option>
                     </select>
+                </div>
+                <div class="button-div">
                 
-                    <input type="submit">
+                    <input type="submit" class="submit-button" >
+                </div>
             </div>
         </form>
-</section>
+        </div>
+    </div>
 
 
-    
+</main>  
 {% endblock %}

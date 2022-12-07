@@ -10,34 +10,38 @@
 </section>
 
 <div class = "whole-list">
-{% for member in members %}
 
-    <div class="list-container">
-        <ul class="members-list">
-            
-                <li class="members-list-item">
-                    <u><a class="a-name" href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a></u>
-                </li>
-                <li class="members-list-item">
-                    <p>
-                        {% if member.status == '1' %}
-                            <span>&#128994;</span>
-                        {% elif member.status == '0'%}
-                            <span>&#128308;</span>
-                        {% endif %}</p>
-                </li>
-         <div class="button-div">
-            <a href="/members/{{ member.id }}/edit"><button class="edit-delete-button">Edit</button></a>
+    {% for member in members %}
+
+        <div class="list-container">
+            <ul class="members-list">
+                
+                    <li class="members-list-item">
+                        <u><a class="a-name" href="/members/{{member.id}}"><h3>{{ member.name }}</h3></a></u>
+                    </li>
+                    <li class="members-list-item">
+                        <p>
+                            {% if member.status == '1' %}
+                                <span>&#128994;</span>
+                            {% elif member.status == '0'%}
+                                <span>&#128308;</span>
+                            {% endif %}</p>
+                    </li>
+        
+        
+            <div class="button-div">
+                <a href="/members/{{ member.id }}/edit"><button class="edit-delete-button">Edit</button></a>
+            </div>
+            <div class="button-div">
+                <form action="members/{{ member.id }}/delete" method="POST">
+                    <input class="edit-delete-button" type="submit" value="Delete">
+                </form>
+            </div>   
+            </ul>
         </div>
-        <div class="button-div">
-            <form action="members/{{ member.id }}/delete" method="POST">
-                <input class="edit-delete-button" type="submit" value="Delete">
-            </form>
-        </div>   
-        </ul>
-    </div>
+    
 
-{% endfor %}
+    {% endfor %}
 </div>  
 {% endblock %}
 </main>

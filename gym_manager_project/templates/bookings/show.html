@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <section>
-        <ul>
-            <li>
-                <p>{{ booking.member.name }}</p>
-            </li>
-            <li>
-                <p>{{ booking.workout.name }} </p>
-            </li>
-            <li>
-                <p>{{ booking.workout.date }} @ {{ booking.workout.time }}</p>
-        </ul>
-    </section>
-    
+<main>
+    <div class="container">
+        <div class="show-member-list-container-bookings">
+            <ul class = "members-list">
+                <li class="members-list-item">
+                    <h3># {{ booking.id }}</h3>
+                </li>
+                <li class="members-list-item-box">
+                    <p>{{ booking.member.name }}</p>
+                </li>
+                <li class="members-list-item-box">
+                    <p>{{ booking.workout.name }} </p>
+                </li>
+                <li class="members-list-item">
+                    <p>{{ booking.workout.date }} @ {{ booking.workout.time }}</p>
+            </ul>
+    </div>
+    </div>
+</main>
 {% endblock %}

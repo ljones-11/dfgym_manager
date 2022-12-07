@@ -11,16 +11,16 @@
 
 <div class = "whole-list">
 {% for booking in bookings %}
-    <div class="list-container">
+    <div class="list-container-classes">
         <ul class="members-list">
             <li class="members-list-item">
-                <u><a class="a-name"href="/bookings/{{booking.id}}"><h3>Booking # {{ booking.id }}</h3></a></u>
+                <u><a class="a-name"href="/bookings/{{booking.id}}"><h3># {{ booking.id }}</h3></a></u>
             </li>
-            <li class="members-list-item">
-                <p> {{ booking.member.name }} </p>
-            </li class="members-list-item">
-            <li class="members-list-item">
-                <p> {{ booking.workout.name }} </p>
+            <li class="members-list-item-box">
+                <b><p> {{ booking.member.name }} </p></b>
+            </li>
+            <li class="members-list-item-box">
+                <b><p> {{ booking.workout.name }} </p></b>
             </li>
             <div class="button-div">
             <form action="bookings/{{ booking.id }}/delete" method="POST">
@@ -31,7 +31,7 @@
         </ul>
     </div>
 
-</main>
+
 {% endfor %}
-    
+</main>
 {% endblock %}

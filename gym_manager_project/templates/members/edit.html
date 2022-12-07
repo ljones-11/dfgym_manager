@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<section>
-    <h2>Edit {{ member.name }}</h2>
-
+<main class="main-forms">
+<div class="container-form">
+    <div class="div-form-container">
+        <u><h2>Edit {{ member.name }}</h2></u>
+    </div>
+    <div class="div-form-container">
         <form action="/members/{{ member.id }}" method="POST">
-            <div>
+            <div class="div-form">
                 <label for="name">Name:</label>
                     <input type="text" id="name" name="name" value="{{ member.name }}">
-
+            </div>
+            <div class="div-form">
                 <label for="text">E-mail:</label>
                     <input type="email" id="email" name="email" value="{{ member.email }}">
-                
+            </div>   
+            <div class="div-form">
                 <label for="status">Status</label>
                 <select id="type" name="status">
                     {% if member.status =='1' %}
@@ -24,17 +28,21 @@
                     {% endif %}
                     
                 </select>
-
+            </div>     
+            <div> 
                 <label for="type">Membership Type</label>
                     <select id="type" name="type">
                        
                         <option value="standard">Standard</option>
                         <option value="premium">Premium</option>
                     </select>
-
-                    <input type="submit">
+                </div>   
+                <div class ="button-div">
+                    <input type="submit" class="submit-button">
+                </div>
             </div>
         </form>
-</section>
-    
+    </div>
+    </div>
+</main>   
 {% endblock %}

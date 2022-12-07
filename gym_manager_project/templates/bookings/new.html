@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Add a Booking</h2>
-
-        <form action="/bookings" method = "POST">
+<main class="main-forms">
+    <div class="container-form">
+        <div class="div-form-container">
+            <u><h2>Add a Booking</h2></u>
+        </div>
+        <div class="div-form-container">
+        <form action="/bookings" method = "POST" class="form">
+            <div class="div-form-container">
             <label for="member">User:</label>
             <select name="member_id" id="member">
                 {% for member in active_members %}
@@ -11,17 +16,25 @@
  
                 {% endfor %}
             </select>
-        
+        </div>
+        </div>
+        <div class="div-form-container">
             <label for="workout">Workout:</label>
             <select name="workout_id" id="workout">
                 {% for workout in active_workouts %}
                     <option value="{{ workout.id }}">{{ workout.name }}</option>
                 {% endfor %}
                 </select>
-                
-            <input type="submit" value="Create Booking">
+        </div>
+        <div class="button-div">  
+            <input type="submit" value="Create Booking" class="submit-button">
+        </div>
         </form>
+    </div>
+</div>
 
+
+</main>  
     
 
     

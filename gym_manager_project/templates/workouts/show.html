@@ -12,7 +12,7 @@
                 <li class="members-list-item">
                     <blockquote class="description">{{ workout.description }}</blockquote>
                 </li>
-                <li class="members-list-item">
+                <li class="members-list-item-box">
                     <b><p>{{ workout.date }} at {{ workout.time }}</p></b>
                 </li>
                 <li class="members-list-item">
@@ -35,7 +35,7 @@
                 </li>
                 </li>
                 <li class="members-list-item">
-                    <p>Members booked in:</p>
+                    <b><u><p>Members booked in</p></u></b>
                         {% for members in member_list %}
                         <li class="members-list-item-box">
                                 {{members.name}}
