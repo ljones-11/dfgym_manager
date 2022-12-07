@@ -34,6 +34,7 @@ main {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    margin-top:2rem;
     padding-bottom:1rem;
     gap:1rem;
 }
@@ -48,6 +49,7 @@ main {
     display: flex;
     align-items: center;
     justify-content:space-between;
+    margin: 5px;
     gap:0.5rem;
 }
 
