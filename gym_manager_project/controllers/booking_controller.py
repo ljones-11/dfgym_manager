@@ -31,9 +31,6 @@ def new_booking():
     workouts = workout_repository.select_all()
     todays_date = date.today()
 
-    # start_of_peak_time = 1800
-    # end_of_peak_time = 2000
-
     for member in members:
         if member.status == '1':
             active_members.append(member)
@@ -53,6 +50,10 @@ def new_booking():
             standard_members.append(member)
 
     return render_template("bookings/new.html", members=members, workouts=workouts, active_members = active_members, active_workouts = active_workouts)
+
+
+# start_of_peak_time = 1800
+    # end_of_peak_time = 2000
 
 # CREATE POST method, redirect, request.form['data'], memebr and workout repo's.select new booking, bookingrepo.save 
 

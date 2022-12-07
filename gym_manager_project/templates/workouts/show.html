@@ -6,11 +6,11 @@
         <div class = "show-member-list-container-classes">
             <ul class = "members-list">
                 <li class="members-list-item">
-                    <h2>{{ workout.name }}</h2>
+                    <h2 class="black-text-notrans">{{ workout.name }}</h2>
                 </li>
                 
                 <li class="members-list-item">
-                    <blockquote class="description">{{ workout.description }}</blockquote>
+                    <p class="description">{{ workout.description }}</p>
                 </li>
                 <li class="members-list-item-box">
                     <b><p>{{ workout.date }} at {{ workout.time }}</p></b>
@@ -30,12 +30,12 @@
                     {% if remaining_spaces %}
                         <p>{{ remaining_spaces }} spaces available ({{workout.capacity}})</p>
                     {% else %}
-                        <h2>{{ workout.name }} (FULL) </h2>
+                        <h2> &#128683; class full! &#128683; </h2>
                     {% endif %}
                 </li>
                 </li>
                 <li class="members-list-item">
-                    <b><u><p>Members booked in</p></u></b>
+                    <b><u><p>ATTENDEES</p></u></b>
                         {% for members in member_list %}
                         <li class="members-list-item-box">
                                 {{members.name}}

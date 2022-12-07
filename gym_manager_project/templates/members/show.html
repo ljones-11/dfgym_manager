@@ -6,7 +6,7 @@
     <div class = "show-member-list-container">
         <ul class = "members-list">
             <li class="members-list-item">
-                <h2 class="black-text">{{ member.name }}</h2>
+                <h2 class="black-text-notrans">{{ member.name }}</h2>
             </li>
             <li class="members-list-item">
                 <p><a class="email-link" href="mailto:{{ member.email }}">{{ member.email }}</a></p>
@@ -32,7 +32,7 @@
                 <p>Membership | {{ member.type }}</p>
             </li>
             <li class = "classes-booked-list-item">
-                <h4>Classes booked</h4>
+                <h4>CLASSES BOOKED</h4>
                     {% for workouts in workouts_list %}
                     <li class="members-list-item-box">
                             {{workouts.name}}

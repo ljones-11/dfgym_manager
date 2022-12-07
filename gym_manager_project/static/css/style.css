@@ -51,7 +51,13 @@ main {
     justify-content:space-between;
     margin: 5px;
     gap:0.5rem;
+    
 }
+
+.rounded-input {
+    padding:10px;
+    border-radius:10px;
+  }
 
 .home-section{
     padding:50px;
@@ -167,6 +173,7 @@ main {
 .members-list-item {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .members-list-item-solid {
@@ -234,8 +241,10 @@ main {
     padding: 8px;
 }
      
-
-h1,h2,h3,h4 {
+h2, h4 {
+    font-family: helvetica;
+}
+h1,h3, {
     font-family: 'Baron Neue', sans-serif;
     font-family: 'Baron Neue Italic', sans-serif;
     font-family: 'Baron Neue Bold Italic', sans-serif;
