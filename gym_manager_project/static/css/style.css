@@ -63,7 +63,7 @@ main {
     border-color:#434343;
     border-radius: 10px;
     box-shadow: 0px 2px 2px;
-    width: 150px;
+    min-width: 175px;
     margin-bottom: 150px;
     background-color:#d7eefd;
 
@@ -230,12 +230,9 @@ main {
     border-radius: 0.5rem;
     padding: 8px;
 }
-    
-    
-h2 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-h1,h3,h4 {
+     
+
+h1,h2,h3,h4 {
     font-family: 'Baron Neue', sans-serif;
     font-family: 'Baron Neue Italic', sans-serif;
     font-family: 'Baron Neue Bold Italic', sans-serif;
@@ -252,8 +249,29 @@ h1,h3,h4 {
 
 .black-text {
     color:#434343;
-    margin-top: 0px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top:20px;
+    font-family:Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    border-style:solid;
+    border-width:2px ;
+    border-color:#434343;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left:10px;
+    margin-right:10px;
+    background-color:#ebf7ff ;
+}
+
+.black-text:hover{
+    color:#54b1e5;
+    border-color:#54b1e5;
+    transition-duration:0.75s;
 }
 
 
