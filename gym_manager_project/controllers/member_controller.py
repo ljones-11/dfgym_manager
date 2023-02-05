@@ -5,7 +5,7 @@ import repositories.member_repository as member_repository
 members_blueprint = Blueprint("members", __name__)
 
 
-#GET list members '/members' repo.select_all, render list
+#GET list of members '/members' repo.select_all, render list
 
 @members_blueprint.route("/members")
 def members():
