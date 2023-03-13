@@ -1,5 +1,15 @@
 ## Gym Management Web Application  |  Codeclan - Week 5 Project
 
+<br></br>
+<div align="center">
+ <span>
+  <img height="200px" alt="gym_project1" src="https://user-images.githubusercontent.com/116349877/224753322-caa3a6b5-6f36-44a8-bb6d-030a0959f60d.png">
+  &emsp;
+  <img height="200px" alt="gym_project2" src="https://user-images.githubusercontent.com/116349877/224753361-72943a15-69e2-4944-8eaf-3ff743479713.png">
+ <span>
+</div>
+<br></br>
+
 * Object oriented programming with Python
 * Test Driven Development
 * Web Programming (REST, MVC)
